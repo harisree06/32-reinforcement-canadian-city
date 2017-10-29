@@ -1,4 +1,4 @@
-city = [
+cities = [
 {
   id: "38fj8d900",
   city: 'Hamilton',
@@ -13,6 +13,8 @@ city = [
       }
     ]
   },
+
+# Toronto
 {
   id: "39fo837y7",
   city: 'Toronto',
@@ -31,5 +33,40 @@ city = [
       }
     ]
   },
-{id: "58uj8d800", city: 'Montreal', events: [{date: '2017-08-10', attendees: 250}]},
-{id: "48hn8d900", city: 'Kingston', events: [{ date: '2015-04-16', attendees: 45}]}
+
+# Montreal
+{
+  id: "58uj8d800",
+  city: 'Montreal',
+  events: [
+    {date: '2017-08-10', attendees: 250}
+  ]
+},
+
+#Kingston
+{
+  id: "48hn8d900",
+  city: 'Kingston',
+  events: [
+    {date: '2015-04-16', attendees: 45}
+    ]
+  }
+]
+
+# An array with hashes inside
+# city = [
+# {id, city,events[
+#                 {date,attendees}
+#                 ]
+#       }
+# ]
+puts "There are #{cities.count} city elements."
+puts
+cities.each do |city|
+  puts
+  puts city[:city]
+  puts "-------------"
+  city[:events].each do |event|
+    puts "#{event[:date]}, #{event[:attendees]} people"
+  end
+end
